@@ -370,6 +370,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               actions: <AlertDialogAction>[
                                 AlertDialogAction(key: 'no', label: 'Cancelar'),
                                 AlertDialogAction(key: 'yes', label: 'Borrar'),
+                                
                               ]
                             );
                             response == 'yes' ? _goDeleteOrderDtl(e.idDetail.toString()) : null;
