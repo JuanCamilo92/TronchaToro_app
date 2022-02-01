@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "158886248410",
+    "project_id": "troncha-toro",
+    "storage_bucket": "troncha-toro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158886248410:android:6996eb44f8367eaecfcae3",
+        "android_client_info": {
+          "package_name": "com.jcsg.tronchatoro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158886248410-1ej98vlbila31o5sh4gnklatp1j8ls7o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jcsg.tronchatoro",
+            "certificate_hash": "9340663776499ad60c9fd5a289f50e9013f88ba0"
+          }
+        },
+        {
+          "client_id": "158886248410-8s85kdilq109esr4r7atbqs78j5akv5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgtdJm3acThbYniwNlJwJ2xMPoEFge5cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158886248410-8s85kdilq109esr4r7atbqs78j5akv5u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
