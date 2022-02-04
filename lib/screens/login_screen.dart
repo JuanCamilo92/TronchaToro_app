@@ -12,8 +12,11 @@ import 'package:tronchatoro_app/components/loader_component.dart';
 import 'package:tronchatoro_app/helpers/constans.dart';
 import 'package:http/http.dart' as http;
 import 'package:tronchatoro_app/models/token.dart';
+import 'package:tronchatoro_app/models/user.dart';
 import 'package:tronchatoro_app/screens/home_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tronchatoro_app/screens/newUser_screen.dart';
+import 'package:tronchatoro_app/screens/user_screen.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScren extends StatefulWidget {
@@ -215,7 +218,14 @@ class _LoginScrenState extends State<LoginScren> {
                   }
                 ),
              ),
-             onPressed: (){},
+             onPressed: (){
+               Navigator.pushReplacement(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => NewUserScreen()
+                  )
+                );
+             },
            ),
          ),
        ],
