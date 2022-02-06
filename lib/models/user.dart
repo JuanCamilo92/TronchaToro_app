@@ -5,7 +5,7 @@ class User {
   int rolId = 0;
   String name = '';
   String lastName = '';
-  String birthDate = '';
+  DateTime birthDate = DateTime(2000);
   String address = '';
   String phoneNumber = '';
   String imageId = '';
@@ -33,7 +33,7 @@ class User {
     rolId = json['rol_id'];
     name = json['name'];
     lastName = json['lastName'];
-    birthDate = json['birthDate'];
+    birthDate = json['birthDate'] != null ? DateTime.parse(json['birthDate']): DateTime(1900);
     address = json['address'];
     phoneNumber = json['phoneNumber'];
     imageId = json['imageId'] == null ? '' : json['imageId'];

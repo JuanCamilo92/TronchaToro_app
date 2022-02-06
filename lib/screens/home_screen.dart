@@ -19,6 +19,7 @@ import 'package:http/http.dart' as http;
 import 'package:tronchatoro_app/screens/Orders_screen.dart';
 import 'package:tronchatoro_app/screens/login_screen.dart';
 import 'package:tronchatoro_app/screens/order_InputScreen.dart';
+import 'package:tronchatoro_app/screens/user_screen.dart';
 import 'package:tronchatoro_app/screens/users_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -322,7 +323,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ListTile(
             leading: Icon(Icons.verified_user),
             title: const Text('Mis datos', style: TextStyle(fontSize: 17),),
-            onTap: (){},
+            onTap: () {
+              Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => UserScreen(token: widget.token)
+                  )
+                );
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout),
