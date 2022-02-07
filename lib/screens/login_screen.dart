@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tronchatoro_app/components/loader_component.dart';
 import 'package:tronchatoro_app/helpers/constans.dart';
@@ -336,7 +337,7 @@ class _LoginScrenState extends State<LoginScren> {
       'email': user.email,
       'Rol_id' : 1,
       'Name': user.displayName,
-      'BirthDate' : '2000-01-01',
+      'BirthDate' : DateFormat("yyyy-MM-dd").format(DateTime(1900)),
       'imageId': user.photoUrl,
       'LoginType': "1",
     };

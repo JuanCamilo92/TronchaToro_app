@@ -23,9 +23,9 @@ import 'package:http/http.dart' as http;
 
 class UserScreen extends StatefulWidget {
   final Token token;
-  //final User user;
+  final User user;
 
-  UserScreen({required this.token});//, required this.user
+  UserScreen({required this.token, required this.user});//, required this.user
 
   @override
   _UserScreenState createState() => _UserScreenState();
@@ -370,7 +370,7 @@ class _UserScreenState extends State<UserScreen> {
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             child: ElevatedButton(
               child: Text('Cambiar contraseña'),
-              onPressed: () => _RegisterUser(),
+              onPressed: () => _ChangrePassword(),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.resolveWith<Color>(
                   (Set<MaterialState> states) {
@@ -433,7 +433,7 @@ class _UserScreenState extends State<UserScreen> {
       'imageId': _NameImage,
     };
 
-    var url = Uri.parse('${Constans.apiUrl}/api/User/RegisterUser/');
+    var url = Uri.parse('${Constans.apiUrl}/api/User/UpdateUser/');
     var bodyRequest = jsonEncode(request);
     var response = await http.post(
       url,
@@ -460,14 +460,12 @@ class _UserScreenState extends State<UserScreen> {
       return;
     }
 
-    var body = response.body;
+    //var body = response.body;
 
-    var decodedJson = jsonDecode(body);
-    var token = Token.fromJson(decodedJson);
-    Navigator.pushReplacement(
+    Navigator.push(
       context, 
       MaterialPageRoute(
-        builder: (context) => HomeScreen(token: token,)
+        builder: (context) => HomeScreen(token: widget.token,)
       )
     );
   }
@@ -586,22 +584,24 @@ class _UserScreenState extends State<UserScreen> {
   }
 
   void _LoadUser() {
-    _Email = widget.token.user.email;
+    _Email = widget.user.email;
     _EmailController.text = _Email;
 
-    _Name = widget.token.user.name;
+    _Name = widget.user.name;
     _NameController.text =  _Name;
 
-    _LastName = widget.token.user.lastName;
+    _LastName = widget.user.lastName;
     _LastNameController.text = _LastName;
 
-    _selectedDate = widget.token.user.birthDate == null ? DateTime(1900) : widget.token.user.birthDate;
+    _selectedDate = widget.user.birthDate == null ? DateTime(1900) : widget.user.birthDate;
     _BirtDateController.text = DateFormat("yyyy/MM/dd").format(_selectedDate);
 
-    _Address = widget.token.user.address;
+    _Address = widget.user.address;
     _AddressController.text = _Address;
 
-    _PhoneNumber = widget.token.user.phoneNumber;
+    _PhoneNumber = widget.user.phoneNumber;
     _PhoneNumberController.text = _PhoneNumber;
   }
+
+  _ChangrePassword() {}
 }

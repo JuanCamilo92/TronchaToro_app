@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (context) => UserScreen(token: widget.token)
+                    builder: (context) => UserScreen(token: widget.token, user: _user,)
                   )
                 );
             },
